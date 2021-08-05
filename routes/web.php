@@ -5,7 +5,7 @@ use App\Models\Produto;
 use App\Models\Categoria;
 use App\Http\Controllers\ControladorProduto;
 use App\Http\Controllers\ControladorCategoria;
-
+use App\Http\Controllers\ControladorHome;
 
 
 /*
@@ -25,6 +25,9 @@ Route::get('/', function () {
 
 Route::get('/produtos', [ControladorProduto::class, 'index']);
 Route::get('/categorias', [ControladorCategoria::class, 'index']);
+Route::get('/home', [ControladorHome::class, 'index']);
+
+
 
 
 
