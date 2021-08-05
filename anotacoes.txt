@@ -1,1 +1,2 @@
-Projeto Cadastro de Categoria com interface grafica. 
+Projeto CRUD Laravel com interface gráfica. 
+
