@@ -4,6 +4,8 @@
     "/assets/bootstrap/bootstrap.css": "/assets/bootstrap/bootstrap.css",
     "/assets/jquery/jquery.js": "/assets/jquery/jquery.js",
     "/assets/bootstrap/bootstrap.js": "/assets/bootstrap/bootstrap.js",
+    "/assets/popper/popper.js": "/assets/popper/popper.js",
+    "/assets/popper/popper1.js": "/assets/popper/popper1.js",
     "/assets/css/pages/cliente/style.css": "/assets/css/pages/cliente/style.css",
     "/assets/css/pages/layout/style.css": "/assets/css/pages/layout/style.css"
 }
