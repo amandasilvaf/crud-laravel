@@ -13,7 +13,7 @@ class ControladorCategoria extends Controller
      */
     public function index()
     {
-        //
+        return view('categorias');
     }
 
     /**
