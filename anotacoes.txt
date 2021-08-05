@@ -1,2 +1,39 @@
 Projeto CRUD Laravel com interface gráfica. 
 
+
+-------------- LARAVEL-MIX ------------------------
+O Laravel Mix é um gerenciador de Assets.
+
+O Laravel Mix oferece uma API que abstrai toda a configuração de webpack, 
+realizando o empacotamento de módulos e a compilação de recursos, 
+além de oferecer suporte à vários pré-processadores CSS e JavaScript.
+
+---> Instalação:
+
+Passo 1: Comece instalando o Laravel Mix através do NPM ou Yarn.
+mkdir my-app && cd my-app
+npm init -y
+npm install laravel-mix --save-dev
+
+Passo 2: Crie um arquivo de configuração Mix na raiz do seu novo projeto.
+touch webpack.mix.js
+
+
+Passo 3: Defina sua compilação no arquivo webpack.mix.js,
+como, por exemplo:
+
+    .styles('resources/views/cliente/assets/css/style.css', 'public/assets/css/pages/cliente/style.css')
+
+Sempre no formato: 
+    .TIPODOARQUIVO('caminhoOrigem', 'caminhoDestino')
+Sendo TIPODOARQUIVO -> sass, scripts, styles, entre outros. 
+Sendo caminhoDestino um caminho dentro do diretório Public. 
+
+Passo 4: rodar 
+    npm run dev, para atualizar as alterações (ao final de cada alteração). 
+ou
+    npm rum watch (o terminal ficará observando as alterações e as salvará automaticamente).
+
+
+------------------- FIM LARAVEL-MIX -----------------------------
+

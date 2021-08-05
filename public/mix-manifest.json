@@ -1,4 +1,9 @@
 {
-    "/layout/css/style.css": "/layout/css/style.css?id=d41d8cd98f00b204e980",
-    "/layout/js/script.js": "/layout/js/script.js?id=7db1ef2e95f4937172a6"
+    "/assets/js/app.js": "/assets/js/app.js",
+    "/assets/css/app.css": "/assets/css/app.css",
+    "/assets/bootstrap/bootstrap.css": "/assets/bootstrap/bootstrap.css",
+    "/assets/jquery/jquery.js": "/assets/jquery/jquery.js",
+    "/assets/bootstrap/bootstrap.js": "/assets/bootstrap/bootstrap.js",
+    "/assets/css/pages/cliente/style.css": "/assets/css/pages/cliente/style.css",
+    "/assets/css/pages/layout/style.css": "/assets/css/pages/layout/style.css"
 }
