@@ -5,7 +5,7 @@
     <div class="card border">
         <div class="card-body">
             <h1 class="text-center">Listar</h1>
-                <table class="table table-ordered table-hover">
+                <table class="table table-ordered table-hover" id="tabelaProdutos">
                     <thead>
                         <tr>
                             <th>Código</th>
@@ -18,7 +18,7 @@
                     </thead>
                     <tbody>
                        
-                     
+                        
             
                     </tbody>
                 </table>
@@ -96,8 +96,33 @@
             });
         }
 
+        function carregarProdutos(){
+            $.getJSON('/api/produtos', function(produtos){
+                for(i=0; i<produtos.length; i++){
+                    linha = montarLinha(produtos[i]);
+                    $('#tabelaProdutos>tbody').append(linha);
+                }
+            });
+        }
+
+        function montarLinha(p){
+            var linha = "<tr>" + 
+                "<td>" + p.id + "</td>" +
+                "<td>" + p.nome + "</td>" +
+                "<td>" + p.estoque + "</td>" +
+                "<td>" + p.valor_atual + "</td>" +
+                "<td>" + p.categoria_id + "</td>" +
+                "<td>" +
+                    '<button class="btn btn-sm btn-warning m-1"> Editar </button>'+
+                    '<button class="btn btn-sm btn-danger m-1"> Excluir </button>'+
+                "</td>" +
+                "</tr>";
+            return linha;
+        }
+
         $(function (){
             carregarCategorias();
+            carregarProdutos();
         });
      
     </script>

@@ -22,3 +22,10 @@ $p3->estoque\040=\0405
 $p3->valor_atual\040=\040150
 $p3->categoria_id\040=\0405
 $p3->save()
+$p4\040=\040new\040Produto()
+$p4->nome\040=\040"Brinco\040de\040Perolas"
+$p4->estoque\040=\0403
+$p4->valor_atual\040=\040200
+$p4->categoria_id\040=\0405
+$p4->save()
+$p4->save()
