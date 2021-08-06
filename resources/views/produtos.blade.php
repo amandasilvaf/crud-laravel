@@ -85,5 +85,21 @@
             $('#valor').val('');
             $('#modalProdutos').modal('show')
         }
+
+        function carregarCategorias(){
+            $.getJSON('/api/categorias', function(data){
+                console.log(data);
+                for(i=0; i<data.length; i++){
+                    opcao = '<option value="' + data[i].id + '">' + data[i].nome + '</option>'; 
+                    $('#categoria').append(opcao);
+                }
+            });
+        }
+
+        $(function (){
+            carregarCategorias();
+        });
+     
     </script>
+    
 @endsection
