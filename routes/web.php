@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/produtos', [ControladorProduto::class, 'index']);
+Route::get('/produtos', [ControladorProduto::class, 'indexView']);
 Route::get('/categorias', [ControladorCategoria::class, 'index']);
 Route::get('/home', [ControladorHome::class, 'index']);
 

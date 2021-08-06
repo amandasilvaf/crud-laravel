@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorCategoria;
+use App\Http\Controllers\ControladorProduto;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/categorias', [ControladorCategoria::class, 'indexJson']);
+
+Route::resource('produtos', ControladorProduto::class);
