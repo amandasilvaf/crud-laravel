@@ -127,6 +127,25 @@
             return linha;
         }
 
+        function criarProduto(){
+            prod = {
+                nome:         $('#nomeProduto').val(),
+                valor_atual:  $('#valor').val(),
+                estoque:      $('#estoque').val(),
+                categoria_id: $('#categoria').val()
+            };
+            $.post("/api/produtos", prod, function(data){
+                console.log(data);
+            });
+
+        }
+
+        $('#formProduto').submit( function(event){
+            event.preventDefault();
+            criarProduto();
+            $("#modalProdutos").modal('hide');
+        });
+
         $(function (){
             carregarCategorias();
             carregarProdutos();
