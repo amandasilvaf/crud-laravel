@@ -24,7 +24,7 @@
                 </table>
         </div> {{--card-body--}}
         <div class="card-footer">
-            <button class="btn btn-primary" role="button">Novo Produto</button>
+            <button class="btn btn-primary" role="button" onClick="novoProduto()">Novo Produto</button>
         </div>
     </div>{{--card--}}
 
@@ -32,7 +32,6 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form class="form-horizontal" id="formProduto">
-                    @csrf
                     <div class="moda-header">
                         <h5 class="modal-title">Novo Produto</h5>
                     </div>
@@ -74,4 +73,16 @@
     </div>
 
 
+@endsection
+
+@section('javascript')
+    <script type="text/javascript">
+        function novoProduto(){
+            $('#id').val('');
+            $('#nomeProduto').val('');
+            $('#estoque').val('');
+            $('#valor').val('');
+            $('#modalProdutos').modal('show')
+        }
+    </script>
 @endsection
