@@ -29,3 +29,4 @@ $p4->valor_atual\040=\040200
 $p4->categoria_id\040=\0405
 $p4->save()
 $p4->save()
+exit
