@@ -26,6 +26,8 @@ Route::get('/', function () {
 Route::get('/produtos', [ControladorProduto::class, 'index']);
 Route::get('/categorias', [ControladorCategoria::class, 'index']);
 Route::get('/home', [ControladorHome::class, 'index']);
+Route::get('/categorias/novo', [ControladorCategoria::class, 'create']);
+Route::post('/categorias', [ControladorCategoria::class, 'store']);
 
 
 
