@@ -132,7 +132,7 @@
                 nome:         $('#nomeProduto').val(),
                 valor_atual:  $('#valor').val(),
                 estoque:      $('#estoque').val(),
-                categoria_id: $('#categoria').val()
+                categoria_id: $('#categoria').val(),
             };
             $.post("/api/produtos", prod, function(data){
                 console.log(data);
