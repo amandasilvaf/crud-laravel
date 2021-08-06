@@ -59,6 +59,7 @@
                             <label for="categoria" class="control-lable">Categoria</label>
                             <div class="input-group">
                                 <select class="form-control" id="categoria"></select>
+        
                             </div>
                         </div>
 
