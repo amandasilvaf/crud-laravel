@@ -11,7 +11,7 @@
                     <input type="text" class="form-control" name="nomeCategoria">
                 </div>
                 <button type="submit" class="btn btn-success m-1">Cadastrar</button>
-                <button type="cancel" class="btn btn-secondary m-1">Cancelar</button>
+                <a class="btn btn-secondary" href="/categorias" role="button">Cancelar</a>
             </form>
         </div>
     </div>

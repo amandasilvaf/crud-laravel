@@ -63,7 +63,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                    
                     </div>
                 </form>
             </div>
@@ -117,11 +117,65 @@
                 "<td>" + p.valor_atual + "</td>" +
                 "<td>" + p.categoria_id + "</td>" +
                 "<td>" +
-                    '<button class="btn btn-sm btn-warning m-1"> Editar </button>'+
-                    '<button class="btn btn-sm btn-danger m-1"> Excluir </button>'+
+                    '<button class="btn btn-sm btn-warning m-1" onclick="editar(' + p.id + ')"> Editar </button>'+
+                    '<button class="btn btn-sm btn-danger m-1" onclick="remover(' + p.id + ')"> Excluir </button>'+
                 "</td>" +
                 "</tr>";
             return linha;
+        }
+
+        /*function editar(id){
+            $.getJSON('/api/produtos/'+id, function(data){
+                console.log(data);
+                $('#id').val(data.id);
+                $('#nomeProduto').val(data.nome);
+                $('#estoque').val(data.estoque);
+                $('#valor').val(data.valor_atual);
+                $('#categoria').val(data.categoria_id);
+                $('#modalProdutos').modal('show');
+            });
+        }*/
+        /*function salvarProduto(){
+            prod = {
+                id:           $('#id').val(),
+                nome:         $('#nomeProduto').val(),
+                valor_atual:  $('#valor').val(),
+                estoque:      $('#estoque').val(),
+                categoria_id: $('#categoria').val()
+            };
+            $.ajax({
+                type: "PUT",
+                url: "/api/produtos/" + prod.id,
+                context: this,
+                data: prod,
+                success: function(){
+                    console.log('Salvou!')
+                },
+                error: function(error){
+                    console.log(error)
+                }
+            });
+        }*/
+
+        function remover(id){
+            $.ajax({
+                type: "DELETE",
+                url: "/api/produtos/" + id,
+                context: this,
+                success: function(){
+                    console.log('Apagou!!')
+                    linhas = $('#tabelaProdutos>tbody>tr');
+                    e = linhas.filter( function(i, elemento){
+                        return elemento.cells[0].textContent == id;
+                    });
+                    if (e)
+                        e.remove();
+
+                },
+                error: function(error){
+                    console.log(error)
+                }
+            });
         }
 
         function criarProduto(){
@@ -140,12 +194,17 @@
 
         }
 
+        
 
         $('#formProduto').submit( function(event){
             event.preventDefault();
-            criarProduto();
+            if($("#id").val() != '')
+                salvarProduto();
+            else
+                criarProduto();
             $("#modalProdutos").modal('hide');
         });
+
 
         $(function (){
             carregarCategorias();
