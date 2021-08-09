@@ -124,7 +124,7 @@
             return linha;
         }
 
-        /*function editar(id){
+        function editar(id){
             $.getJSON('/api/produtos/'+id, function(data){
                 console.log(data);
                 $('#id').val(data.id);
@@ -134,8 +134,8 @@
                 $('#categoria').val(data.categoria_id);
                 $('#modalProdutos').modal('show');
             });
-        }*/
-        /*function salvarProduto(){
+        }
+        function salvarProduto(){
             prod = {
                 id:           $('#id').val(),
                 nome:         $('#nomeProduto').val(),
@@ -148,14 +148,27 @@
                 url: "/api/produtos/" + prod.id,
                 context: this,
                 data: prod,
-                success: function(){
+                success: function(data){
+                    prod = JSON.parse(data)
                     console.log('Salvou!')
+                    linhas = $("#tabelaProdutos>tbody>tr");
+                    e = linhas.filter( function(i, e){
+                        return (e.cells[0].textContent == prod.id)
+                    });
+                    if(e){
+                        e[0].cells[0].textContent = prod.id;
+                        e[0].cells[1].textContent = prod.nome;
+                        e[0].cells[2].textContent = prod.estoque;
+                        e[0].cells[3].textContent = prod.valor_atual;
+                        e[0].cells[4].textContent = prod.categoria_id;
+                    }
+
                 },
                 error: function(error){
                     console.log(error)
                 }
             });
-        }*/
+        }
 
         function remover(id){
             $.ajax({
