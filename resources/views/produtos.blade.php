@@ -8,7 +8,7 @@
                 <table class="table table-ordered table-hover" id="tabelaProdutos">
                     <thead>
                         <tr>
-                            <th>Código</th>
+                            <th>ID</th>
                             <th>Nome</th>
                             <th>Qtde</th>
                             <th>Valor</th>
@@ -18,8 +18,6 @@
                     </thead>
                     <tbody>
                        
-                        
-            
                     </tbody>
                 </table>
         </div> {{--card-body--}}
@@ -59,14 +57,13 @@
                             <label for="categoria" class="control-lable">Categoria</label>
                             <div class="input-group">
                                 <select class="form-control" id="categoria"></select>
-        
                             </div>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <button type="cancel" class="btn btn-secondary" data-dissmiss="modal">Cancelar</button>
+                        <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
             </div>
@@ -90,7 +87,7 @@
             $('#nomeProduto').val('');
             $('#estoque').val('');
             $('#valor').val('');
-            $('#modalProdutos').modal('show')
+            $('#modalProdutos').modal('show');
         }
 
         function carregarCategorias(){
@@ -132,13 +129,17 @@
                 nome:         $('#nomeProduto').val(),
                 valor_atual:  $('#valor').val(),
                 estoque:      $('#estoque').val(),
-                categoria_id: $('#categoria').val(),
+                categoria_id: $('#categoria').val()
             };
             $.post("/api/produtos", prod, function(data){
                 console.log(data);
+                produto = JSON.parse(data);
+                linha = montarLinha(produto)
+                $('#tabelaProdutos>tbody').append(linha);
             });
 
         }
+
 
         $('#formProduto').submit( function(event){
             event.preventDefault();

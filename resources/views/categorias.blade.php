@@ -9,7 +9,7 @@
                 <table class="table table-ordered table-hover">
                     <thead>
                         <tr>
-                            <th>Código</th>
+                            <th>ID</th>
                             <th>Nome Categoria</th>
                             <th>Ações</th>
                         </tr>

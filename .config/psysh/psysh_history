@@ -30,3 +30,10 @@ $p4->categoria_id\040=\0405
 $p4->save()
 $p4->save()
 exit
+use\040App\134Models\134Produto
+$p\040=\040new\040Produto
+$p->nome\040=\040"AllStar"
+$p->estoque\040=\0402
+$p->valor_atual\040=\040150
+$p->categoria_id=\0404
+$p->save()

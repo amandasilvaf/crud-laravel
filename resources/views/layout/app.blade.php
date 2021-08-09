@@ -33,10 +33,10 @@
     
 
 
-
-    <script src="{{ asset('assets/popper/popper.js') }}"></script>
-    <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('assets/popper/popper.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}" type="text/javascript"></script>
+
 
     {{-- hasSection = existe seção chamada javascript? Se sim, execute o que está aqui dentro --}}
     @hasSection('javascript')
