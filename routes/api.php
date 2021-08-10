@@ -22,6 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/categorias', [ControladorCategoria::class, 'indexJson']);
 
-// Route::apiResource('/produtos', ControladorProduto::class);
+Route::apiResource('/produtos', ControladorProduto::class);
 
-Route::resource('/produtos', 'ControladorProduto');
