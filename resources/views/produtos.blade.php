@@ -82,6 +82,7 @@
             }
         });
 
+        // Exibe o modal com os campos vazios para serem preenchidos
         function novoProduto(){
             $('#id').val('');
             $('#nomeProduto').val('');
@@ -90,6 +91,7 @@
             $('#modalProdutos').modal('show');
         }
 
+        // Busca as categorias do banco e as insere no select do form
         function carregarCategorias(){
             $.getJSON('/api/categorias', function(data){
                 console.log(data);
@@ -124,6 +126,7 @@
             return linha;
         }
 
+       
         function editar(id){
             $.getJSON('/api/produtos/'+id, function(data){
                 console.log(data);
@@ -162,7 +165,6 @@
                         e[0].cells[3].textContent = prod.valor_atual;
                         e[0].cells[4].textContent = prod.categoria_id;
                     }
-
                 },
                 error: function(error){
                     console.log(error)
